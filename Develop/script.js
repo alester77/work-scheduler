@@ -21,6 +21,7 @@ $(document).ready(function () {
 
     $('#saveStatus').text("Data Saved Successfully! 😎")
     
+    // makes the save function disappear
     setTimeout(function(){
       $('#saveStatus').text("");
     }, 1000);
