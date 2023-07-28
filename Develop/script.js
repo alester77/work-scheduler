@@ -5,6 +5,12 @@ $(document).ready(function () {
   let dateElement = document.getElementById("currentDay");
   dateElement.innerText = dateString;
 
+  // create element to show save status
+  let saveStatusElement = document.createElement("p");
+  saveStatusElement.id = "saveStatus";
+  dateElement.append(saveStatusElement);
+  
+
   // Add click event listener on save button to save user input in local storage
   $(".saveBtn").on("click", function () {
     let timeBlock = $(this).closest(".time-block");
@@ -12,7 +18,15 @@ $(document).ready(function () {
     // using jquery to find the description class within the time blocks.
     let userInput = timeBlock.find(".description").val();
     localStorage.setItem(id, userInput);
+
+    $('#saveStatus').text("Data Saved Successfully! 😎")
+    
+    setTimeout(function(){
+      $('#saveStatus').text("");
+    }, 1000);
   });
+
+  
 
   // Apply past, present, or future class to each time block based on the current hour
   let currentHour = dayjs().hour();
