@@ -60,7 +60,9 @@ textarea {
 
 
 #saveStatus {
-  text-align: center;
+  text-align: right;
   position: absolute;
   width: 100%;
+  padding-right: 46%;
+  padding-top: 1%;
 }
